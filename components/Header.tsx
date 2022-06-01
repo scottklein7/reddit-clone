@@ -11,16 +11,20 @@ import {
 } from '@heroicons/react/outline'
 import { BeakerIcon, SearchIcon, MenuIcon, ChevronDownIcon } from '@heroicons/react/solid'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from "next/link"
+
 function Header() {
     const { data: session } = useSession()
     return (
-        <div className="flex bg-white px-4 shadow-sm sticky top-0 z-50">
+        <div className="flex items-center py-2 bg-white px-4 shadow-sm sticky top-0 z-50">
             <div className="relative h-10 w-20 flex-shrink-0 cursor-pointer">
-                <Image
-                    objectFit="contain"
-                    src="https://links.papareact.com/fgy"
-                    layout="fill"
-                />
+                <Link href="/">
+                    <Image
+                        objectFit="contain"
+                        src="https://links.papareact.com/fgy"
+                        layout="fill"
+                    />
+                </Link>
             </div>
             <div className="flex items-center m-7 xl:min-w-[300px]">
                 <HomeIcon className="h-5 w-5" />
